@@ -14,34 +14,25 @@ public class Sudoko_Solver {
                                  int row, int col,
                                  int num)
     {
-        // Row has the unique (row-clash)
+        // Row has the unique
         for (int d = 0; d < board.length; d++)
         {
-             
-            // Check if the number we are trying to
-            // place is already present in
-            // that row, return false;
             if (board[row][d] == num) {
                 return false;
             }
         }
  
-        // Column has the unique numbers (column-clash)
+        // Column has the unique 
         for (int r = 0; r < board.length; r++)
         {
              
-            // Check if the number
-            // we are trying to
-            // place is already present in
-            // that column, return false;
             if (board[r][col] == num)
             {
                 return false;
             }
         }
  
-        // Corresponding square has
-        // unique number (box-clash)
+        // Corresponding square has unique
         int sqrt = (int)Math.sqrt(board.length);
         int boxRowStart = row - row % sqrt;
         int boxColStart = col - col % sqrt;
@@ -59,7 +50,7 @@ public class Sudoko_Solver {
             }
         }
  
-        // if there is no clash, it's safe
+//         if no clash 
         return true;
     }
     public static void displaySudoku(int[][] Sudoku) {
